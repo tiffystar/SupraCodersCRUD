@@ -25,7 +25,7 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Inventory Checker</h1>
-          <nav>
+          <ul>
             {!loggedIn 
             // || !createAccount 
             ? 
@@ -40,10 +40,9 @@ function App() {
             {loggedIn ? (
               <>
                 <Link to="/Users/:UserId/InvManager">Inventory Manager</Link>
-                <Link to="/dashboard">Dashboard</Link>
               </>
             ) : (null)}
-          </nav>
+          </ul>
         </header>
       </div>
 

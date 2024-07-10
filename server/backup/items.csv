@@ -26,5 +26,21 @@
         "description": "this bubbly beverage not only quenches your thirst with its tantalizing effervescence, but also boosts gut health with its bountiful probiotics",
         "quantity": 15,
         "users_id": 3
-    }
+    },
+
+    added to db using POSTMAN:
+      {
+        "id": 6,
+        "item_name": "scrunchies",
+        "description": "It's nice to let your hair down, but every once in a while, when it's about to go down, ladies need to harness their crowning glory",
+        "quantity": 30,
+        "users_id": 4
+  },
+  {
+        "id": 14,
+        "item_name": "PB&J",
+        "description": "First you take some peanuts and you crush 'em, you crush 'em... for it's PEANUUUT peanut butta and JELLY!",
+        "quantity": 2,
+        "users_id": 2
+  }
 ]
