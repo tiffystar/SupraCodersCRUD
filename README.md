@@ -45,7 +45,7 @@ Z-prefix CRUD application built in 72 hours
 4. (Optional)
     - if making edits, open a 4th terminal and be sure to 'push' up any changes to your forked/cloned github repo.
 
---------------------------Building Database--------------------------------------
+--------------------------Building Backend--------------------------------------
 1) Install necessary packages:
 - npm install
 - npm init -y
