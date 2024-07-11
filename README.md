@@ -64,6 +64,11 @@ Notes: As this applications was built as a Minimal Viable Product (MVP), here a 
 ![InitializeDB](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/a07b01f8-7f24-44e0-8537-5d303e7bf145)
 
 - push migration & seeding files to DB (see steps 5) & 6) in 'Building Backend' below)
+  
+  (example)
+  ![Db_items](https://github.com/user-attachments/assets/ef6ace23-5199-4ab5-b2bf-d0e41ffae337)
+![DB_users](https://github.com/user-attachments/assets/095c51c6-7260-4647-8b60-7de32dfde113)
+
 
 2. Back End (Server)
     - open a second terminal
