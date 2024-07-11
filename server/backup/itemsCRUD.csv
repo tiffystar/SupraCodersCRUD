@@ -1,0 +1,80 @@
+Items added/edited via 'Inventory Tracker' CRUD app :)
+[
+  {
+    "id": 2,
+    "item_name": "chocolate",
+    "description": "Lindor truffles - the perfect compliment to a freshly brewed cup of espresso",
+    "quantity": 5,
+    "users_id": 1
+  },
+  {
+    "id": 3,
+    "item_name": "sushi",
+    "description": "ocean-fresh fish gently wrapped in layers of delicate seaweed, soft jasmine race, and crisp veggies",
+    "quantity": 20,
+    "users_id": 4
+  },
+  {
+    "id": 14,
+    "item_name": "PB&J",
+    "description": "First you take some peanuts and you crush 'em, you crush 'em... for it's PEANUUUT peanut butta and JELLY!",
+    "quantity": 2,
+    "users_id": 3
+  },
+  {
+    "id": 15,
+    "item_name": "astrophysics",
+    "description": "You Matter. Unless you multiply yourself by the speed of light squared. Then you Energy.",
+    "quantity": 100,
+    "users_id": 6
+  },
+  {
+    "id": 16,
+    "item_name": "Goggles",
+    "description": "I wear my sun-goggles at night.",
+    "quantity": 5,
+    "users_id": 6
+  },
+  {
+    "id": 18,
+    "item_name": "flippers",
+    "description": "flippin your fins, you don't get very far; legs are required for jumping, dance, walking around",
+    "quantity": 7,
+    "users_id": 5
+  },
+  {
+    "id": 1,
+    "item_name": "Coffee",
+    "description": "Columbian roasted to perfection and finely ground, perfect for brewing a cup of espresso; vacuum-sealed to ensure freshness",
+    "quantity": 9,
+    "users_id": 1
+  },
+  {
+    "id": 6,
+    "item_name": "scrunchies",
+    "description": "It's nice to let your hair down, but every once in a while, when it's about to go down, ladies need to harness their crowning glory",
+    "quantity": 34,
+    "users_id": 4
+  },
+  {
+    "id": 20,
+    "item_name": "pinneapple",
+    "description": "did you know that pineapples are anti-inflammatory and are actually good for treating asthma?",
+    "quantity": 2,
+    "users_id": 9
+  },
+  {
+    "id": 4,
+    "item_name": "kombucha",
+    "description": "this bubbly beverage not only quenches your thirst with its tantalizing effervescence, but also boosts gut health with its bountiful probiotics",
+    "quantity": 14,
+    "users_id": 3
+  },
+  {
+    "id": 21,
+    "item_name": "candy",
+    "description": "Sour Patch Kid.  First they're sour.  Then they're sweet",
+    "quantity": 4,
+    "users_id": 3
+  }
+]

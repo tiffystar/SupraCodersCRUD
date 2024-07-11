@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-// import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setLoggedIn, setUserId }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  //const [loggedIn, setLoggedIn] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,7 +35,7 @@ const Login = ({ setLoggedIn, setUserId }) => {
       console.log('UserId:', data.userId);
 
     } catch (error) {
-        console.error('Failed to login', error);
+      console.error('Failed to login', error);
     }
 
   };

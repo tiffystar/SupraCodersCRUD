@@ -25,6 +25,7 @@ const Inventory = () => {
     return (
         <div className="item-list">
             <h1>Inventory</h1>
+            {/* iterates over the 'resData' array of inventory to display each item */}
             {resData.length > 0 ? (
                 <ul>
                     {resData.map((item) => (

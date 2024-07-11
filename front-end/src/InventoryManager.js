@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//'userId' is a prop
 const InventoryManager = ({ userId }) => {
-    const [resData, setResData] = useState([]);
-    const [usersData, setUsersData] = useState({});
-    const [editMode, setEditMode] = useState(null);
-    const [newItem, setNewItem] = useState({ item_name: '', description: '', quantity: 0 });
-    const [currentItem, setCurrentItem] = useState({ item_name: '', description: '', quantity: 0 })
+    const [resData, setResData] = useState([]); //store fetched inventory data
+    const [usersData, setUsersData] = useState({}); //store fetched users' data
+    const [editMode, setEditMode] = useState(null); //track if an item is being edited
+    const [newItem, setNewItem] = useState({ item_name: '', description: '', quantity: 0 }); //store data for adding new item
+    const [currentItem, setCurrentItem] = useState({ item_name: '', description: '', quantity: 0 }) //store data for 'current' selected item
     const navigate = useNavigate();
 
     useEffect(() => {
-        // console.log('UserId:', userId);
+        console.log('UserId:', userId);
+
+        //fetch user data; need this to display firstname instead of user_id
         const fetchUsers = async () => {
             try {
                 const response = await fetch('http://localhost:8080/Users');
@@ -28,6 +31,7 @@ const InventoryManager = ({ userId }) => {
             }
         };
 
+        //fetches inventory prior to modifications
         const fetchInventory = async () => {
             try {
                 const response = await fetch(`http://localhost:8080/Users/${userId}/InvManager`);
@@ -45,6 +49,7 @@ const InventoryManager = ({ userId }) => {
         fetchInventory();
     }, [userId]);
 
+    //handles POST request
     const handleAddItem = async (event) => {
         event.preventDefault();
         try {
@@ -55,7 +60,7 @@ const InventoryManager = ({ userId }) => {
             });
             if (response.ok) {
                 setNewItem({ item_name: '', description: '', quantity: 0 });
-                fetchModInventory(); // Fetch updated inventory after adding the new item
+                fetchModInventory(); // Fetches 'modified' inventory after adding new item
             } else {
                 console.error('Failed to add item');
             }
@@ -64,7 +69,8 @@ const InventoryManager = ({ userId }) => {
         }
     };
 
-    const handleEditItem = async (item) => {
+    //PATCH requests
+    const handleEditItem = async () => {
         try {
             // console.log('User ID:', userId);
 
@@ -77,7 +83,7 @@ const InventoryManager = ({ userId }) => {
             });
             if (response.ok) {
                 setEditMode(null);
-                fetchModInventory(); // Fetch updated inventory after editing the item
+                fetchModInventory(); // Fetches 'modified' inventory after editing item
             } else {
                 console.error('Failed to edit item');
             }
@@ -86,13 +92,14 @@ const InventoryManager = ({ userId }) => {
         }
     };
 
+    //DELETE requests
     const handleDeleteItem = async (itemId) => {
         try {
             const response = await fetch(`http://localhost:8080/Users/${userId}/InvManager/${itemId}`, {
                 method: 'DELETE'
             });
             if (response.ok) {
-                fetchModInventory(); // Fetch updated inventory after deleting the item
+                fetchModInventory(); // Fetches 'modified' inventory after deleting item
             } else {
                 console.error('Failed to delete item');
             }
@@ -100,7 +107,7 @@ const InventoryManager = ({ userId }) => {
             console.error('Failed to delete item:', error);
         }
     };
-    // fetch 'modified' inventory after adding, editing, or deleting
+    //funcition to fetch 'modified' inventory after adding, editing, or deleting
     const fetchModInventory = async () => {
         try {
             const response = await fetch(`http://localhost:8080/Users/${userId}/InvManager`);
@@ -143,6 +150,7 @@ const InventoryManager = ({ userId }) => {
                 <button type="submit">Add Item</button>
             </form>
             <p>you may also edit, and delete these items.</p>
+            {/* iterates over the 'resData' array of inventory to display each item */}
             {resData.length > 0 ? (
                 resData.map((item) => (
                     <div key={item.id}>
