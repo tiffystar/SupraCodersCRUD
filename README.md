@@ -63,6 +63,8 @@ Notes: As this applications was built as a Minimal Viable Product (MVP), here a 
 	    [\dt]
 ![InitializeDB](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/a07b01f8-7f24-44e0-8537-5d303e7bf145)
 
+- push migration & seeding files to DB (see steps 5) & 6) in 'Building Backend' below)
+
 2. Back End (Server)
     - open a second terminal
     - cd into main directory 'SupraCodersCRUD'
@@ -94,13 +96,13 @@ Notes: As this applications was built as a Minimal Viable Product (MVP), here a 
    ![KNEXfile](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/a19a984b-6ecb-4401-b7bb-5521e64b9800)
 
 4) FOLLOW THE STEPS ABOVE FOR 'Back-end (Database)' to initialize your docker container.
-5) Build you Migration files:
+5) Migration files:
    In the terminal:
    	- npx knex migrate:make create_name_of_table
 Migrate to DB:
 	- npx knex migrate:latest
 	- npx knex migrate:rollback (rollback anytime you need edit seeding files)
-6) Build your Seed Files:
+6) Seed Files:
    	- npx knex seed:make <name>
     run seed files in DB (push up 'dummy data')
 	- npx knex seed:run
