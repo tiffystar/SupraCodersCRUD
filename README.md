@@ -79,3 +79,6 @@ Migrate to DB:
 9) Run PostMan queries to ensure you're able to Create, Read, Update, and Delete (CRUD)
 
     sample postman queries:
+![POSTMAN_post](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/f2238301-c325-44af-bf2b-943635d2cc5b)
+
+![POSTMAN_post2](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/fa982ef3-f0c1-45a5-8252-cc5cb1821891)
