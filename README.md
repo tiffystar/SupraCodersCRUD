@@ -1,6 +1,32 @@
 # SupraCoderCRUD
 Z-prefix CRUD application built in 72 hours
 
+HOME screen
+
+![app_home](https://github.com/user-attachments/assets/11444d82-94c6-4f22-9c39-f61420e26771)
+
+VISITORS (for non-users to view inventory items)
+
+![visitorsView](https://github.com/user-attachments/assets/16d58984-5ba8-471e-87e0-bd1f4d368bf4)
+
+CREATE ACCOUNT (new users)
+
+![CreateAccount](https://github.com/user-attachments/assets/cf6adde7-966f-4bbe-a5c3-3924472bf225)
+
+
+LOGIN (users with credentials)
+
+![LoginPage](https://github.com/user-attachments/assets/3a22ad0b-a96c-4756-9196-859038998ed4)
+
+
+InvManager (where users can add, edit, and delete items)
+
+![InvManager](https://github.com/user-attachments/assets/d062a110-f3b1-4bf6-ada6-fd66e98bddc3)
+
+
+SERVER (glimpse of the /users API data)
+
+![serverUsers](https://github.com/user-attachments/assets/87c5179f-0bb1-430c-92bd-6e8e6a0319d3)
 -------------------------------------------Instructions on running the app:----------------------------------------------------
 
 1. Back-end (Database)
@@ -56,6 +82,7 @@ Z-prefix CRUD application built in 72 hours
 [npm i express pg knex]
 3) Initialize KNEX: [npx knex init] -- generates a "Knexfile template" at the root of your project
    in the knexfile.js, ensure 'development' has the following content (replace 'books_db' with 'inventory_db'):
+   
    ![KNEXfile](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/a19a984b-6ecb-4401-b7bb-5521e64b9800)
 
 4) FOLLOW THE STEPS ABOVE FOR 'Back-end (Database)' to initialize your docker container.
@@ -73,12 +100,14 @@ Migrate to DB:
    	- SELECT * FROM users; (SQL language)
    	- SELECT * FROM items;
    your migration tables and content of your seed files should appear in the terminal:
+
 ![DB_tables](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/63219fc9-4925-4826-8873-050bcc9a4e3e)
 
 8) Build your .route's in your app.js file (this is where your server will GET, POST, PATCH, DELETE items in the database)
 9) Run PostMan queries to ensure you're able to Create, Read, Update, and Delete (CRUD)
 
     sample postman queries:
+   
 ![POSTMAN_post](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/f2238301-c325-44af-bf2b-943635d2cc5b)
 
 ![POSTMAN_post2](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/fa982ef3-f0c1-45a5-8252-cc5cb1821891)
