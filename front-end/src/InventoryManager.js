@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const InventoryManager = ({ userId }) => {
     const [resData, setResData] = useState([]);
     const [usersData, setUsersData] = useState({});
     const [editMode, setEditMode] = useState(null);
     const [newItem, setNewItem] = useState({ item_name: '', description: '', quantity: 0 });
+    const navigate = useNavigate();
 
     useEffect(() => {
         console.log('UserId:', userId);
@@ -12,7 +14,7 @@ const InventoryManager = ({ userId }) => {
             try {
                 const response = await fetch('http://localhost:8080/Users');
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Network response failed');
                 }
                 const users = await response.json();
                 const usersMap = users.reduce((acc, user) => {
@@ -29,7 +31,7 @@ const InventoryManager = ({ userId }) => {
             try {
                 const response = await fetch(`http://localhost:8080/Users/${userId}/InvManager`);
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Network response failed');
                 }
                 const data = await response.json();
                 setResData(data);
@@ -42,8 +44,8 @@ const InventoryManager = ({ userId }) => {
         fetchInventory();
     }, [userId]);
 
-    const handleAddItem = async (e) => {
-        e.preventDefault();
+    const handleAddItem = async (event) => {
+        event.preventDefault();
         try {
             const response = await fetch(`http://localhost:8080/Users/${userId}/InvManager`, {
                 method: 'POST',
