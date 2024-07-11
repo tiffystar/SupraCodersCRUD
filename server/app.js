@@ -161,10 +161,11 @@ app.route('/Users/:UserId/InvManager/:itemId')
     })
 
     //allows InvManager to edit item with :itemId
+    //verified in PostMan; AND updates :UserId !!! :D :D
     .patch((req, res) => {
-        const itemId = parseInt(req.params.itemId);
-        const { item_name, description, quantity, users_id } = req.body;
-        const users_id = parseInt(req.params.UserId); //this should automatically provide the ':UserId' (had to use 'parseInt')
+        const itemId = parseInt(req.params.itemId, 10);
+        const { item_name, description, quantity } = req.body;
+        const users_id = parseInt(req.params.UserId, 10); //this should automatically provide the ':UserId' (had to use 'parseInt')
         knex('items').where({ id: itemId}).update({ item_name, description, quantity, users_id })
         .then(result => {
             if (result === 0) {
@@ -174,8 +175,8 @@ app.route('/Users/:UserId/InvManager/:itemId')
             }
         })
         .catch(error => {
-            console.error(error);
-            res.status(500).json({ message: 'Could not update item' });
+            console.error('error updating item:', error);
+            res.status(500).json({ message: 'Internal server error' });
         });
 })
 

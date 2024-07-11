@@ -9,7 +9,8 @@ import Inventory from './Inventory';
 
 function App() {
   // const navigate = useNavigate();
-  const [ loggedIn, setLoggedIn] = useState(0);
+  const [ userId, setUserId ] = useState(null);
+  const [ loggedIn, setLoggedIn] = useState(false);
   // const [ createAccount, setCreateAccount ] = useState();
 
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/Inventory" element={<Inventory/>} />
         <Route path="/Login" element={<Login setLoggedIn={setLoggedIn} />} />
         {/* <Route path="/CreateAccount" element={<CreateAccount setCreateAccount={setCreateAccount} />} /> */}
-        <Route path="/Users/:UserId/InvManager" element={<InventoryManager />} />
+        <Route path="/Users/:UserId/InvManager" element={<InventoryManager userId={userId} />} />
       </Routes>
 
       <div className="App">
@@ -32,8 +33,8 @@ function App() {
             (
               <>
             {/* <Link to="/CreateAccount">Create Account</Link> */}
-              <Link to="/Login"> Login</Link>
-              <Link to="/Inventory"> Inventory</Link>
+              <ul><Link to="/Login"> Login</Link></ul>
+              <ul><Link to="/Inventory"> Inventory</Link></ul>
               </> 
                ) 
               : null}
