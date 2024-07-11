@@ -1,38 +1,46 @@
 # SupraCoderCRUD
 Z-prefix CRUD application built in 72 hours
 
-HOME screen
+This "Inventory Tracker" application is meant to satisfy the following user stories:
+(screenshots of the app are provided below)
 
-![app_home](https://github.com/user-attachments/assets/11444d82-94c6-4f22-9c39-f61420e26771)
+1) As an inventory manager I want to be able to create an account so that I can track my inventory.
+2) As an inventory manager I want to be able to log into my account so that I can see my inventory of items.
+	After logging in, the inventory manager should be redirected to their inventory of items.
+3) As an inventory manager I want to be able to create a new item so that I can share my item details with the world.
+	After the item is created, the inventory manager should be redirected to their inventory of items.
+	An item displays name, description, and quantity.
+4) As an inventory manager I want to be able to see a my entire inventory of items.
+	The inventory of items should display the first 100 characters of each item description, with “...” at the end if the description is longer than 100 characters.
+5) As an inventory manager I want to be able to see any individual item I have added.
+	The full item information should be displayed.
+6) As an inventory manager I want to be able to edit an item so that I can fix any mistakes I made creating it.
+	When the user toggles edit mode, the page remains the same and the fields become editable.
+7) As an inventory manager I want to be able to delete an item so that I can remove any unwanted content.
+	When the user deletes the item they should be redirected to their inventory of items.
+8) As a visitor, who is not logged in, I want to be able to view all items created by every inventory manager so that I can browse every item.
+	Unauthenticated users should be able to view all items, and any single item.
+	The items should only display the first 100 characters of its description with “...” at the end if it is longer than 100 characters.
+9) As a visitor, who is not logged in, I want to be able to view a specific item created by any user so that I can see all of its details.
+	Unauthenticated users should be able to view all items, and any single item.
+10) As an inventory manager I want to be able to view all items created by every inventory manager so that I can browse every item.
+	Unauthenticated users should be able to view all items, and any single item.
 
-VISITORS (for non-users to view inventory items)
+Notes: As this applications was built as a Minimal Viable Product (MVP), here a few notable mentions:
+- Any user (inv manager) can GET, ADD, PATCH (edit), and DELETE any item.
+- Any modifications made (save for DELETE), 'Last Modified by:' will be updated with user's firstname
+  example
+![lastModBy](https://github.com/user-attachments/assets/de35651b-a91e-4203-bd9a-dd1ae9d66bb4)
+- Once an inventory manager creates (adds) a new item OR edits an item, the new/updated item will be displayed at the bottom of the inventory list (must scroll to the bottom).
+- #4 remains a 'stretch goal'
 
-![visitorsView](https://github.com/user-attachments/assets/16d58984-5ba8-471e-87e0-bd1f4d368bf4)
-
-CREATE ACCOUNT (new users)
-
-![CreateAccount](https://github.com/user-attachments/assets/cf6adde7-966f-4bbe-a5c3-3924472bf225)
-
-
-LOGIN (users with credentials)
-
-![LoginPage](https://github.com/user-attachments/assets/3a22ad0b-a96c-4756-9196-859038998ed4)
-
-
-InvManager (where users can add, edit, and delete items)
-
-![InvManager](https://github.com/user-attachments/assets/d062a110-f3b1-4bf6-ada6-fd66e98bddc3)
-
-
-SERVER (glimpse of the /users API data)
-
-![serverUsers](https://github.com/user-attachments/assets/87c5179f-0bb1-430c-92bd-6e8e6a0319d3)
--------------------------------------------Instructions on running the app:----------------------------------------------------
+------------------------------------Instructions on running the app:-----------------------------------------
 
 1. Back-end (Database)
     - make sure Docker is running/ you are signed in
-    Open your terminal for the following commands (you will have a least 3 terminals running to operate the app)
-    - you may need to pull down a Dockerized Postgres image from the cloud (if one is not already initiated);
+      
+      Open your terminal for the following commands (you will have a least 3 terminals running to operate the app)
+    - Pull down a Dockerized Postgres image from the cloud (if one is not already initiated);
         run [docker images -a] to verify;
         otherwise, run [docker pull postgress]
     - Create the directories that will house your database data:
@@ -111,3 +119,33 @@ Migrate to DB:
 ![POSTMAN_post](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/f2238301-c325-44af-bf2b-943635d2cc5b)
 
 ![POSTMAN_post2](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/fa982ef3-f0c1-45a5-8252-cc5cb1821891)
+
+------------------Images of running app-------------------
+
+HOME screen
+
+![app_home](https://github.com/user-attachments/assets/11444d82-94c6-4f22-9c39-f61420e26771)
+
+VISITORS (for non-users to view inventory items)
+
+![visitorsView](https://github.com/user-attachments/assets/16d58984-5ba8-471e-87e0-bd1f4d368bf4)
+
+CREATE ACCOUNT (new users)
+
+![CreateAccount](https://github.com/user-attachments/assets/cf6adde7-966f-4bbe-a5c3-3924472bf225)
+
+
+LOGIN (users with credentials)
+
+![LoginPage](https://github.com/user-attachments/assets/3a22ad0b-a96c-4756-9196-859038998ed4)
+
+
+InvManager (where users can add, edit, and delete items)
+
+![InvManager](https://github.com/user-attachments/assets/d062a110-f3b1-4bf6-ada6-fd66e98bddc3)
+
+
+SERVER (glimpse of the /users API data)
+
+![serverUsers](https://github.com/user-attachments/assets/87c5179f-0bb1-430c-92bd-6e8e6a0319d3)
+
