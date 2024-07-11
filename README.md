@@ -74,3 +74,8 @@ Migrate to DB:
    	- SELECT * FROM items;
    your migration tables and content of your seed files should appear in the terminal:
 ![DB_tables](https://github.com/tiffystar/SupraCodersCRUD/assets/54339124/63219fc9-4925-4826-8873-050bcc9a4e3e)
+
+8) Build your .route's in your app.js file (this is where your server will GET, POST, PATCH, DELETE items in the database)
+9) Run PostMan queries to ensure you're able to Create, Read, Update, and Delete (CRUD)
+
+    sample postman queries:
