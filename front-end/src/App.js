@@ -32,17 +32,11 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Inventory Checker</h1>
           <nav>
-            {!loggedIn
-              // || !createAccount 
-              ?
-              (
                 <>
                   {/* <Link to="/CreateAccount">Create Account</Link> */}
                   <ul><Link to="/Login"> Login</Link></ul>
-                  <ul><Link to="/Inventory"> Inventory</Link></ul>
+                  <ul><Link to="/Inventory">Inventory</Link></ul>
                 </>
-              )
-              : null}
           </nav>
         </header>
       </div>

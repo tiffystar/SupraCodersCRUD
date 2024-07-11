@@ -30,7 +30,7 @@ const Login = ({ setLoggedIn, setUserId }) => {
       const data = await response.json();
       console.log('Login data:', data);
 
-      const userId = data[0].id;
+      const userId = data[0].id; //an array of user objects; need to access 'data[0].id' to get user Id
       setLoggedIn(true);
       setUserId(userId);
       navigate(`/Users/${userId}/InvManager`);
